@@ -23,7 +23,7 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. What problem does the context API help solve?
+1. What problem does the context API help solve? global state management without having to prop drill
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
@@ -38,12 +38,12 @@ You are expected to be able to answer questions in these areas. Your responses c
 - [x] `fork & clone` this repository.
 - [x] `cd` into the forked copy of this repository.
 - [x] **RUN** `npm install` to retrieve all `server-side` the dependencies.
-- [ ] **RUN** `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
-- [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
-- [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
-- [ ] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
-- [ ] **cd** into `smurfs` and run `npm install` to retrieve the client side dependencies.
-- [ ] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
+- [x] **RUN** `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
+- [x] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
+- [x] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+- [x] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
+- [x] **cd** into `smurfs` and run `npm install` to retrieve the client side dependencies.
+- [x] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
 
 **LOOK** at all the files you've been given for this project. One important file to note is `server.js`. This file contains an **API** that you are going to be interfacing with. Below is documentation on how to interact with the **API**.
 
@@ -132,3 +132,4 @@ Follow these steps for completing your project.
 - [ ] Your team lead will count the project as complete after receiving your pull-request
 
 
+Challenge in the 1st objective: A finite state machine bundles all the state management in a box that handles the process of state being true or false and the aspect of it being in progress from true to false, as well as the aspect of there being an error in the attempt of changing the state from true to false or from false to true.
