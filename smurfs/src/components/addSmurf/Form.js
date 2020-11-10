@@ -22,14 +22,14 @@ const NewSmurfForm = (props) => {
 
 
 const onSubmit = evt => {
-    evt.preventDefault()
+    // evt.preventDefault()
     props.submitNewSmurf(values)
 }
 
 
 const onInputChange = evt => {
-    const { name, value } = evt.target
-    setValues({...values, [name]: value})
+    
+    setValues({...values, [evt.target.name]: evt.target.value})
 }
 
 return (
@@ -37,7 +37,7 @@ return (
     <form  onSubmit={onSubmit}>
         <h2>Add New Smurf</h2>
 
-        <button id = 'submitButton' >Submit</button>
+        
         
 
         <div >
@@ -69,6 +69,8 @@ return (
                     type='text'
                 />
             </label>
+
+            <button id = 'submitButton' >Submit</button>
         </div>
 
     </form>
@@ -77,7 +79,9 @@ return (
 
 const mapStateToProps = (state) => {
     return {
-        isLoading: state.isLoading
+        smurfs: state.smurfData,
+        isLoading: state.isLoading,
+        error: state.error
     }
 }
 

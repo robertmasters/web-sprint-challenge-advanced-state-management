@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { connect } from 'react-redux'
-
+import NewSmurfForm from './addSmurf/Form'
 import {fetchSmurfs} from '../store/actions/action'
 
 const SmurfList = (props) => {
@@ -12,18 +12,18 @@ const SmurfList = (props) => {
         <div>
             <h1>Smurf Village</h1>
             {props.isLoading ? <p>Loading smurfs data...</p> : null}
-            {props.error ? <p style = {{ color: "red" }}> {props.error} </p>: null}
             
+            {props.error ? <p style = {{ color: "red" }}> {props.error} </p>: null}
             {console.log("props.smurfs: ",props.smurfs)}
             {props.smurfs.map((item) => (
                 <div>
-                    {/*console.log("item: ", item)*/}
+                    {console.log("item: ", item)}
                     <h2>{item.name}</h2>
                     <p>Age: {item.age}</p>
                     <p>Height: {item.height}</p>
                 </div>
             ))}
-
+            <NewSmurfForm />
         </div>
     )
 }
@@ -31,8 +31,8 @@ const SmurfList = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isLoading: state.isLoading,
         smurfs: state.smurfData,
+        isLoading: state.isLoading,
         error: state.error
     }
 }

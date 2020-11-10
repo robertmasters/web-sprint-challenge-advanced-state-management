@@ -23,11 +23,20 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. What problem does the context API help solve? global state management without having to prop drill
+1. What problem does the context API help solve? 
+  - global state management without having to manage actions in order to manage state, instead context api lets your manage the state directly.
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+    - actions is the file(s) that determine what the users interactions with state are going to do.
+    - reducers take in those actions and update the state then returns the updated state back to the application.
+    - store stores the state inside of it and gives the application access to functions that manage that state.
+    - it is called the truth because it is what makes state management more generic and easy to manage by centralizing it in one place.
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+  - application state is when you manage state globally throughout the app, and component state, is when that particular piece of state within that component is managed only within that component and its children but its not accessible by the app entirely.
+  - component state may be better when dealing with a small app that doesnt require the centralized aspect of managing state, because it would be adding more complexity when that is not needed. application state would be better used in a large application that manages many components.
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+    it allows us to return a function with a dispatch method instead of an action object. 
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+    Context API because its made specifically for react, and its a lot less code than redux.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 

@@ -5,13 +5,13 @@ import {
     FETCH_SMURF_SUCCESS,
     FETCH_SMURF_FAILURE,
     ADD_SMURF,
-    ADD_SUCCESS
+    ADD_SUCCESS 
   } from "../actions/action";
   
   const initialState = {
-    isLoading: false,
     smurfData: [],
-    error: ""
+    isLoading: false,
+    error: "",
 
   };
   
@@ -29,7 +29,7 @@ import {
         return {
           ...state,
           isLoading: false,
-          smurfData: action.payload
+          smurfData: [...action.payload]
           
         };
       case FETCH_SMURF_FAILURE:
@@ -39,16 +39,20 @@ import {
           error: action.payload
         };
         case ADD_SMURF:
+            console.log("ADD_SMURF - state: ",state)
+            console.log("ADD_SMURF - payload: ", action.payload)
             return {
                 ...state, 
-                isLoading:false,
-                smurfData:  action.payload
+                isLoading:true,
+                // smurfData:  action.payload
             }
 case ADD_SUCCESS:
+    console.log("ADD_SUCCESS: - state: ",state)
+    console.log("ADD_SUCCESS - payload: ", action.payload)
     return {
         ...state, 
         isLoading: false,
-        smurfs: action.payload
+        smurfData:[ ...state.smurfData, action.payload]
     }
 
       default:

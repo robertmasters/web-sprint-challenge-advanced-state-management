@@ -22,20 +22,23 @@ export const fetchSmurfs = () => {
         dispatch({ type: FETCH_SMURF_SUCCESS, payload: res.data });
       })
       .catch((err) => {
-        // console.log(err.message);
+        console.log(err.message);
         dispatch({ type: FETCH_SMURF_FAILURE, payload: err.message });
       });
   };
 };
 
-export const submitNewSmurf = (addSmurf) =>(dispatch) => {
+export const submitNewSmurf = (addSmurf) => {
+    return (dispatch) => {
     dispatch({ type: ADD_SMURF });
     axios
     .post('http://localhost:3333/smurfs', addSmurf)
     .then((res) => {
+        console.log("posting: ", res.data)
         dispatch({ type: ADD_SUCCESS, payload: res.data})
     })
     .catch((error) => {
 console.log("error: ", error)
     })
+}
 }
